@@ -6,3 +6,8 @@
   tasks:
   - name: Get facts for all resource groups
     azure_rm_resourcegroup_info:
+    register: azure_rm_resourcegroup:
+
+  - name: Print Azure-rg
+    ansible.builtin.debug:
+      msg: " {{ azure_rg }}"
