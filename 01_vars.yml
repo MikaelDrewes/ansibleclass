@@ -29,7 +29,7 @@
         var: httpd_status
 
 
-    - name: Is httpd not started
+    - name: Is httpd  started
       ansible.builtin.debug:
-        msg: httpd is not running
-      when: not httpd_status.state == "started"
+        msg: httpd is  running
+      when:  httpd_status.state == "started"
