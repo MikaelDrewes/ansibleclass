@@ -4,7 +4,7 @@
   become: true
 
   vars:
-    package: 
+    package:
       - httpd
       - mariadb-server
       - php
@@ -32,7 +32,7 @@
     - name: Is httpd not started
       ansible.builtin.debug:
         msg: httpd is not running
-      when:  httpd_status.state != "started"
+      when: not httpd_status.state != "started"
 
 
     - name: Configure firewall
@@ -48,4 +48,3 @@
       ansible.builtin.systemd:
         name: firewalld
         state: reloaded
-
